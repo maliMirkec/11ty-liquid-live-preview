@@ -1,0 +1,26 @@
+{%- unless description -%}
+  {%- assign description = site.metaDescription -%}
+{%- endunless -%}
+<meta name="description" content="{{ description | escape }}">
+{%- if page.indexPage == false -%}
+  <meta name="robots" content="noindex">
+{%- endif -%}
+<link rel="canonical" href="{{ site.url | append: page.url }}">
+{%- assign ogImageInfo = ogImage | fileInfo -%}
+<meta property="og:title" content="{{ title | append: ' | ' | append: site.name | escape }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ site.url | append: page.url }}">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:description" content="{{ description | escape }}">
+{%- if ogImage -%}
+  <p>https:{{ ogImage | mediaUrl }}?fm=jpg</p>
+  <meta property="og:image" content="https:{{ ogImage | mediaUrl }}?fm=jpg">
+{%- endif -%}
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@{{ site.twitter }}">
+<meta name="twitter:title" content="{{ title | append: ' | ' | append: site.name |escape }}">
+<meta name="twitter:description" content="{{ description | escape }}">
+{%- if ogImage -%}
+  <meta name="twitter:image" content="https:{{ ogImage | mediaUrl }}?fm=jpg">
+{%- endif -%}

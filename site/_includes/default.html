@@ -1,0 +1,27 @@
+{%- liquid
+  if page.image
+    assign ogImage = page.image
+  endif
+  unless ogImage
+    assign ogImage = site.image
+  endunless
+-%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {%- comment -%}https://speakerdeck.com/csswizardry/get-your-head-straight?slide=39{%- endcomment -%}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title | append: ' | ' | append: site.name }}</title>
+  {%- include 'head/assets' -%}
+  {%- include 'head/seo' -%}
+  {%- include 'head/other' -%}
+</head>
+<body>
+  {%- include 'partials/header' -%}
+  <main>
+    {{ content }}
+  </main>
+  {%- include 'partials/footer' -%}
+</body>
+</html>

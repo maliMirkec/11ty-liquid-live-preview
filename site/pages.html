@@ -1,0 +1,17 @@
+---
+pagination:
+  data: pages
+  size: 1
+  alias: page
+  addAllPagesToCollections: true
+permalink: "{{ page.slug }}"
+tags: "page"
+eleventyComputed:
+  title: "{{ page.title | escape }}"
+layout: default
+---
+
+{%- for component in page.components -%}
+  {%- assign includePath = 'partials/' | append: component.type -%}
+  {%- include includePath, id: component.id, index: forloop.index -%}
+{%- endfor -%}

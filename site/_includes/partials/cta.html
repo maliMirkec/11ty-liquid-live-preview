@@ -1,0 +1,2 @@
+{%- assign componentCta = cta | where: 'id', id | first -%}
+<a class="cta" href="{{ componentCta.url }}">{{ componentCta.text }}</a>

@@ -1,4 +1,4 @@
-const contentful = require("contentful")
+import contentful from 'contentful'
 
 export default async () => {
   const client = contentful.createClient({

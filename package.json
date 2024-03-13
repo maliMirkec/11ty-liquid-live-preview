@@ -17,6 +17,7 @@
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-fetch": "^4.0.1",
     "contentful": "^10.8.1",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "liquidjs": "^10.10.1"
   }
 }

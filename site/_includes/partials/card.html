@@ -3,26 +3,17 @@
   {%- if componentCard.media -%}
     {%- capture cardMediaProps -%}{
       "onDemand": true,
-      "lazy": true,
-      "height": 200
+      "lazy": true
     }{%- endcapture -%}
     {%- for componentMedia in componentCard.media -%}
       {{ componentMedia | mediaTag: cardMediaProps }}
     {%- endfor -%}
   {%- endif -%}
   {%- if componentCard.title -%}
-    {%- if index == 1 -%}
-      <h1 class="card__title">{{ componentCard.title | replace: '\n', '<br>' }}</h1>
-    {%- else -%}
-      <h2 class="card__title">{{ componentCard.title | replace: '\n', '<br>' }}</h2>
-    {%- endif -%}
+    <h3 class="card__title">{{ componentCard.title | replace: '\n', '<br>' }}</h3>
   {%- endif -%}
   {%- if componentCard.subtitle -%}
-    {%- if index == 1 -%}
-      <h2 class="card__subtitle">{{ componentCard.subtitle | replace: '\n', '<br>' }}</h2>
-    {%- else -%}
-      <h3 class="card__subtitle">{{ componentCard.subtitle | replace: '\n', '<br>' }}</h3>
-    {%- endif -%}
+    <h4 class="card__subtitle">{{ componentCard.subtitle | replace: '\n', '<br>' }}</h4>
   {%- endif -%}
   {%- if componentCard.text -%}
     <p class="card__text">{{ componentCard.text | replace: '\n', '<br>' }}</p>

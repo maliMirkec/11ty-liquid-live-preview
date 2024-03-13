@@ -1,0 +1,4 @@
+{%- for component in page.components -%}
+  {%- assign includePath = 'partials/' | append: component.type -%}
+  {%- include includePath, id: component.id, index: forloop.index -%}
+{%- endfor -%}

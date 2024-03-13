@@ -13,7 +13,6 @@
 <meta property="og:site_name" content="{{ site.name }}">
 <meta property="og:description" content="{{ description | escape }}">
 {%- if ogImage -%}
-  <p>https:{{ ogImage | mediaUrl }}?fm=jpg</p>
   <meta property="og:image" content="https:{{ ogImage | mediaUrl }}?fm=jpg">
 {%- endif -%}
 

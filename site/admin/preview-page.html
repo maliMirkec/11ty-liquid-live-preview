@@ -1,0 +1,50 @@
+---
+title: Preview page
+lang: en
+type: Preview page
+layout: default
+permalink: "/preview/"
+noscripts: true
+---
+
+<div class="loader"></div>
+<style>
+.loader {
+  font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+  font-size: var(--fz5);
+  line-height: var(--lh5);
+  font-weight: bold;
+  width: fit-content;
+  margin: auto;
+  clip-path: inset(0 3ch 0 0);
+  animation: l4 1s steps(4) infinite;
+}
+
+.loader:before {
+  content: "Loading..."
+}
+
+@keyframes l4 {
+  to {
+    clip-path: inset(0 -1ch 0 0);
+  }
+}
+</style>
+
+<script>
+const preview = async () => {
+  const urlParams = new URLSearchParams(window.location.search)
+
+  const id = urlParams.get('id')
+
+  const locale = urlParams.get('locale')
+
+  const response = await fetch(`/.netlify/functions/preview-page/?pageId=${id}&locale=${locale}`)
+
+  const $main = document.querySelector('main')
+
+  $main.innerHTML = await response.text()
+}
+
+preview();
+</script>

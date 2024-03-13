@@ -1,0 +1,53 @@
+{%- assign componentSection = components | where: 'id', id | first -%}
+{%- assign componentClass = 'section' -%}
+{%- assign componentTypeClass = '' -%}
+{%- if componentSection.type != blank -%}
+  {%- assign componentType = componentSection.type | downcase | replace: ' ', '-' -%}
+  {%- assign componentClass = componentClass | append: ' component--' | append: componentType -%}
+{%- endif -%}
+<div class="{{ componentClass }} wrapper" id="component-{{ componentSection.id }}">
+  {%- if componentSection.title -%}
+    {%- if index == 1 -%}
+      <h1 class="section__title">{{ componentSection.title | replace: '\n', '<br>' }}</h1>
+    {%- else -%}
+      <h2 class="section__title">{{ componentSection.title | replace: '\n', '<br>' }}</h2>
+    {%- endif -%}
+  {%- endif -%}
+  {%- if componentSection.subtitle -%}
+    {%- if index == 1 -%}
+      <h2 class="section__subtitle">{{ componentSection.subtitle | replace: '\n', '<br>' }}</h2>
+    {%- else -%}
+      <h3 class="section__subtitle">{{ componentSection.subtitle | replace: '\n', '<br>' }}</h3>
+    {%- endif -%}
+  {%- endif -%}
+  {%- if componentSection.text -%}
+    <p class="section__text">{{ componentSection.text | replace: '\n', '<br>' }}</p>
+  {%- endif -%}
+  {%- if componentSection.media -%}
+    {%- capture sectionMediaProps -%}{
+      "onDemand": true,
+      "lazy": true,
+      "width": 600
+    }{%- endcapture -%}
+    {%- for componentMedia in componentSection.media -%}
+      {{ componentMedia | mediaTag: sectionMediaProps }}
+    {%- endfor -%}
+  {%- endif -%}
+  {%- if componentSection.cta -%}
+    <div class="section__action">
+      {%- for ctaId in componentSection.cta -%}
+        {%- include 'partials/cta', id: ctaId -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+  {%- if componentSection.cards -%}
+    <div class="section__grid">
+      {%- for cardId in componentSection.cards -%}
+        {%- include 'partials/card', id: cardId -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+  {%- if componentSection.note -%}
+    <p class="section__note">{{ componentSection.note | replace: '\n', '<br>' }}</p>
+  {%- endif -%}
+</div>

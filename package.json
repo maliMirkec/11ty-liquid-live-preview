@@ -1,0 +1,23 @@
+{
+  "name": "11ty-liquid-live-preview",
+  "version": "1.0.0",
+  "description": "Live preview any Liquid-based templates.",
+  "main": "index.js",
+  "author": "Silvestar Bistrović <me@silvestar.codes> (https://www.silvestar.codes/)",
+  "license": "MIT",
+  "scripts": {
+    "clear-cache": "rm -rf .cache",
+    "clear-dist": "rm -rf dist",
+    "11ty-build": "npx @11ty/eleventy",
+    "11ty-dev": "npx @11ty/eleventy --serve --quiet",
+    "dev": "npm run clear-cache && npm run clear-dist && npm run 11ty-dev",
+    "build": "npm run clear-cache && npm run clear-dist && npm run 11ty-build"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-fetch": "^4.0.1",
+    "contentful": "^10.8.1",
+    "dotenv": "^16.4.5",
+    "liquidjs": "^10.10.1"
+  }
+}

@@ -1,12 +1,13 @@
 const contentful = require("contentful")
 
-const client = contentful.createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN_DELIVERY,
-  environment: process.env.CONTENTFUL_ENVIRONMENT
-})
+module.exports = async function(preview) {
+  const client = contentful.createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: preview ? process.env.CONTENTFUL_ACCESS_TOKEN_PREVIEW : process.env.CONTENTFUL_ACCESS_TOKEN_DELIVERY,
+    environment: process.env.CONTENTFUL_ENVIRONMENT,
+    host: preview ? 'preview.contentful.com' : 'cdn.contentful.com'
+  })
 
-module.exports = async function() {
   return client.getEntries({
     content_type: 'settings',
     order: 'sys.createdAt',

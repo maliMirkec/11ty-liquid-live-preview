@@ -1,0 +1,10 @@
+{
+  "name": "functions",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Silvestar Bistrović <me@silvestar.codes> (https://www.silvestar.codes/)",
+  "license": "MIT",
+  "dependencies": {
+    "contentful": "^10.8.1"
+  }
+}

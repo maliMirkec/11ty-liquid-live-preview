@@ -1,7 +1,6 @@
 const contentful = require("contentful")
 
 module.exports = async function(preview) {
-  console.log('preview', preview);
   const client = contentful.createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: preview ? process.env.CONTENTFUL_ACCESS_TOKEN_PREVIEW : process.env.CONTENTFUL_ACCESS_TOKEN_DELIVERY,

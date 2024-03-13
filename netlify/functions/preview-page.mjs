@@ -9,6 +9,8 @@ import pages from './data/pages'
 import components from './data/components'
 import site from './data/site'
 
+import path from 'path'
+
 export default async (req, context) => {
   const urlParams = new URLSearchParams(req.url.split('?').pop())
   const id = urlParams.get('pageId')
@@ -16,8 +18,9 @@ export default async (req, context) => {
   const page = pagesArray.find(page => page.pageId === id)
 
   if(page) {
+    console.log('path', path);
     const engine = new Liquid({
-      root: './site/_includes/',
+      root: path.resolve(__dirname, '../../site/_includes/'),
       extname: '.html'
     })
 

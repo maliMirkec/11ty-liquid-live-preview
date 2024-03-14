@@ -19,6 +19,19 @@ body {
   font-family: var(--ff2);
   font-size: 1.25em;
   margin: unset;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+main:has(.loader) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 h1,

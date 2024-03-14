@@ -1,15 +1,15 @@
-import { Liquid } from 'liquidjs'
+const liquid = require('liquidjs')
 
-import mediaTag from '../../eleventy/mediaTag'
-import mediaUrl from '../../eleventy/mediaUrl'
-import fileInfo from '../../eleventy/fileInfo'
+const mediaTag = require('../../eleventy/mediaTag')
+const mediaUrl = require('../../eleventy/mediaUrl')
+const fileInfo = require('../../eleventy/fileInfo')
 
-import cta from './data/cta'
-import pages from './data/pages'
-import components from './data/components'
-import site from './data/site'
+const cta = require('./data/cta')
+const pages = require('./data/pages')
+const components = require('./data/components')
+const site = require('./data/site')
 
-import path from 'path'
+const path = require('path')
 
 export default async (req, context) => {
   const urlParams = new URLSearchParams(req.url.split('?').pop())
@@ -18,8 +18,7 @@ export default async (req, context) => {
   const page = pagesArray.find(page => page.pageId === id)
 
   if(page) {
-    console.log('path', path);
-    const engine = new Liquid({
+    const engine = new liquid.Liquid({
       root: path.resolve(__dirname, '../../site/_includes/'),
       extname: '.html'
     })

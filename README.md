@@ -2,6 +2,8 @@
 
 This is a starter project for the simple [Eleventy](https://www.11ty.dev/) site that pulls the data from [Contentful](https://www.contentful.com/), but also allows the live preview on Contentful.
 
+See the demo site: [11ty-llp.netlify.app/](11ty-llp.netlify.app/).
+
 ## The project
 
 Clone the project.
@@ -68,10 +70,12 @@ Add the `.env` file to the root of the project.
 
 Use the data from the Contentful.
 
+```
 CONTENTFUL_SPACE_ID=xyz
 CONTENTFUL_ACCESS_TOKEN_DELIVERY=xyz
 CONTENTFUL_ACCESS_TOKEN_PREVIEW=xyz
 CONTENTFUL_ENVIRONMENT=master
+```
 
 ### Run or build
 

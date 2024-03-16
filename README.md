@@ -89,6 +89,14 @@ Open [localhost:8080](http://localhost:8080).
 
 Preview Contentful page by page's id [localhost:8080/preview/?id=xyz](http://localhost:8080/preview/?id=xyz)
 
+## Deploy
+
+> Don't forget to create your Contentful project and `.env` file.
+
+[Deploy to Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/maliMirkec/11ty-liquid-live-preview#readme)
+
+[Try on StackBlitz](https://stackblitz.com/github/maliMirkec/11ty-liquid-live-preview?file=README.md)
+
 ### Resources
 
 Coming soon.

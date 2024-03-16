@@ -2,7 +2,7 @@
 
 This is a starter project for the simple [Eleventy](https://www.11ty.dev/) site that pulls the data from [Contentful](https://www.contentful.com/), but also allows the live preview on Contentful.
 
-See the demo site: [11ty-llp.netlify.app/](11ty-llp.netlify.app/).
+See the demo site: [11ty-llp.netlify.app/]([11ty-llp.netlify.app/](https://11ty-llp.netlify.app/)).
 
 ## The project
 

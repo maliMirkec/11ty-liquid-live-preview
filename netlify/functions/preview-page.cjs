@@ -7,7 +7,6 @@ const fileInfo = require('../../eleventy/fileInfo')
 const cta = require('./data/cta')
 const pages = require('./data/pages')
 const components = require('./data/components')
-const site = require('./data/site')
 
 const path = require('path')
 
@@ -39,8 +38,7 @@ export default async (req, context) => {
       .renderFile("helpers/page", {
       'page': page,
       'components': await components(),
-      'cta': await cta(),
-      'site': await site()
+      'cta': await cta()
     })
 
     return new Response(await l)

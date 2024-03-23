@@ -99,4 +99,4 @@ Preview Contentful page by page's id [localhost:8080/preview/?id=xyz](http://loc
 
 ### Resources
 
-Blog post: [Eleventy Liquid live preview](https://frontendmasters.com/blog/building-a-live-preview-with-eleventy-contentful-and-liquid-templating/)
+Blog post: [Building a Live Preview with Eleventy, Contentful, and Liquid Templating](https://frontendmasters.com/blog/building-a-live-preview-with-eleventy-contentful-and-liquid-templating/)

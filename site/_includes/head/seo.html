@@ -1,5 +1,5 @@
 {%- unless description -%}
-  {%- assign description = site.metaDescription -%}
+  {%- assign description = site.description -%}
 {%- endunless -%}
 <meta name="description" content="{{ description | escape }}">
 {%- if page.indexPage == false -%}
